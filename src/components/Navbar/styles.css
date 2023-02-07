@@ -1,0 +1,62 @@
+.main-nav {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: 60px;
+  background-color: #FFC700;
+}
+
+.nav-logo-text h4 {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav-username {
+  display: none;
+}
+
+.btn-logout-custom {
+  border: solid 1px #000000;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+}
+
+.btn-logout-custom:hover {
+  background-color: #000000;
+  color: #FFC700;
+}
+
+.btn-logout-custom h6 {
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media (min-width: 576px) {
+  .main-nav {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .nav-username {
+    display: unset;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-nav {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}

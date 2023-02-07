@@ -1,0 +1,43 @@
+.home-container {
+    padding: 20px 10px 10px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.info-container {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .home-container {
+        padding: 40px 50px 40px 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .info-container {
+        display: block;
+        margin-bottom: 25px;
+    }
+    
+    .info-container h1 {
+        font-size: 48px;
+        font-weight: bold;
+        color: #fff;
+        margin: 40px 20px 20px 20px;
+        width: 320px;
+    }
+    
+    .info-container p {
+        font-size: 22px;
+        color: #F2F2F2;
+        margin: 0 20px 50px 20px;
+        width: 320px;
+    }
+    
+    .home-image-container svg {
+        width: 360px;
+        height: auto;
+    }
+}
+
