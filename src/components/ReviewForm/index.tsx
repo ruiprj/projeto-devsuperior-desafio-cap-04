@@ -54,12 +54,6 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
 
   return (
     <div className="base-card  movie-review-card">
-      { hasSuccess && (
-        <div className="alert  alert-success">
-          Review salvo com sucesso!
-        </div>
-      )}
-
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="input-review-custom-container">
           <input
