@@ -81,6 +81,12 @@
         width: 244px;
         height: auto;
     }
-
-    
 }
+
+@media (min-width: 1400px) {
+    .movie-detail-image-container img {
+        width: 294px;
+        height: auto;
+    }
+}
+
