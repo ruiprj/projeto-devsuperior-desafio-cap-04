@@ -1,4 +1,4 @@
-.catalog-container h2 {
+/* .catalog-container h2 {
     margin: 0;
     font-style: normal;
     font-weight: 700;
@@ -8,7 +8,7 @@
     color: #FFFFFF;
 
     margin-bottom: 50px;
-}
+} */
 
 .link-container {
     display: flex;
@@ -27,12 +27,12 @@
 }
 
 @media (min-width: 1200px) {
-    .catalog-container h2 {
+    /* .catalog-container h2 {
         font-size: 48px;
         line-height: 65px;
 
         margin-bottom: 40px;
-    }
+    } */
 
     .link-container a {
         font-size: 24px;

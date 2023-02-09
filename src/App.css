@@ -42,7 +42,10 @@ a:hover {
 
 
 .base-private-container {
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 22px;
+  padding-left: 22px;
 }
 
 @media (min-width: 576px) {
