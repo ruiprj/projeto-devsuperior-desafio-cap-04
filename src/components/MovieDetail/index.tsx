@@ -18,15 +18,6 @@ const MovieDetail = ( { movie }: Props ) => {
                 <h6>{ movie.year }</h6>
                 
                 <p>{ movie.subTitle }</p>
-                
-                {/* <div className="movie-detail-title-container">
-                </div>
-
-                <div className="movie-detail-year-container">
-                </div>
-
-                <div className="movie-detail-subtitle-container">
-                </div> */}
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 import MovieDetail from 'components/MovieDetail';
 import MovieFilter from 'components/MovieFilter';
+import Pagination from 'components/Pagination';
 import { useEffect, useState } from 'react';
 import { Movie } from 'types/movie';
 import { SpringPage } from 'types/vendor/spring';
@@ -12,12 +13,16 @@ const MovieCatalog = () => {
   const [page, setPage] = useState<SpringPage<Movie>>();
 
   useEffect(() => {
+    getMovies(0);
+  }, []);
+
+  const getMovies = (pageNumber: number) => {
     const params: AxiosRequestConfig = {
       method: 'GET',
       url: '/movies',
       params: {
         genreId: 0,
-        page: 0,
+        page: pageNumber,
         size: 4,
         sort: 'title',
       },
@@ -28,7 +33,7 @@ const MovieCatalog = () => {
       .then((response) => {
         setPage(response.data);
       });
-  }, []);
+  };
 
   return (
     <div className="base-private-container  catalog-container">
@@ -44,6 +49,12 @@ const MovieCatalog = () => {
           ))}
 
         </div>
+
+        <Pagination 
+          pageCount={ page ? page.totalPages : 0 } 
+          range={ 3 }
+          onChange={ getMovies }
+        />
       </div>
     </div>
   );
