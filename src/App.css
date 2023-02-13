@@ -50,27 +50,34 @@ a:hover {
 .base-private-container {
   padding-top: 30px;
   padding-bottom: 30px;
-  padding-right: 22px;
-  padding-left: 22px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+@media (min-width: 320px) {
+  .base-private-container {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
 }
 
 @media (min-width: 576px) {
   .base-private-container {
-      padding-left: 35px;
-      padding-right: 35px;
+      padding-left: 25px;
+      padding-right: 25px;
   }
 }
 
 @media (min-width: 768px) {
   .base-private-container {
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 30px;
+      padding-right: 30px;
   }
 }
 
 @media (min-width: 1200px) {
   .base-private-container {
-      padding-left: 60px;
-      padding-right: 60px;
+      padding-left: 50px;
+      padding-right: 50px;
   }
 }

@@ -57,35 +57,35 @@
 
 @media (min-width: 320px) {
     .movie-detail-image-container img {
-        width: 220px;
+        width: 230px;
         height: auto;
     }
 }
 
 @media (min-width: 768px) {
     .movie-detail-image-container img {
-        width: 310px;
+        width: 320px;
         height: auto;
     }
 }
 
 @media (min-width: 992px) {
     .movie-detail-image-container img {
-        width: 422px;
+        width: 432px;
         height: auto;
     }
 }
 
 @media (min-width: 1200px) {
     .movie-detail-image-container img {
-        width: 244px;
+        width: 254px;
         height: auto;
     }
 }
 
 @media (min-width: 1400px) {
     .movie-detail-image-container img {
-        width: 294px;
+        width: 304px;
         height: auto;
     }
 }

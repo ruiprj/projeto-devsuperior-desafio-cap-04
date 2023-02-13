@@ -45,7 +45,7 @@ const MovieFilter = () => {
                 { ...field }
                 options={ selectGenres }
                 isClearable
-                classNamePrefix="genre-select"
+                classNamePrefix="genre-filter-select"
                 getOptionLabel={ (genre: Genre) => genre.name }
                 getOptionValue={ (genre: Genre) => String(genre.id) }
               />
