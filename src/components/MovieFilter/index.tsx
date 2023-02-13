@@ -7,7 +7,7 @@ import { requestBackend } from 'util/requests';
 import './styles.css';
 
 type GenreFilterData = {
-  genre: Genre;
+  genre: Genre | null;
 }
 
 const MovieFilter = () => {
@@ -16,11 +16,23 @@ const MovieFilter = () => {
   const {
     register,
     handleSubmit,
+    setValue,
+    getValues,
     control
   } = useForm<GenreFilterData>();
 
   const onSubmit = (formData: GenreFilterData) => {
     console.log("ENVIOU", formData);
+  };
+
+  const handleChangeGenre = (value: Genre) => {
+    setValue('genre', value);
+
+    const obj : GenreFilterData = {
+      genre: getValues('genre')
+    };
+
+    console.log("ENVIOU", obj);
   };
 
   useEffect(() => {
@@ -46,6 +58,9 @@ const MovieFilter = () => {
                 options={ selectGenres }
                 isClearable
                 classNamePrefix="genre-filter-select"
+
+                onChange={ value => handleChangeGenre(value as Genre) }
+
                 getOptionLabel={ (genre: Genre) => genre.name }
                 getOptionValue={ (genre: Genre) => String(genre.id) }
               />
