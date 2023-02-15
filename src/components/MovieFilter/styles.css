@@ -28,6 +28,9 @@
     background-color: #9e9e9e !important;
 }
 
+.genre-filter-select__option--is-focused {
+    color: #000000 !important;
+}
 .genre-filter-select__control {
     font-size: 1em;
     letter-spacing: -0.015em;

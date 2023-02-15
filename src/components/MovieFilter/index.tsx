@@ -6,11 +6,15 @@ import { Genre } from 'types/genre';
 import { requestBackend } from 'util/requests';
 import './styles.css';
 
-type GenreFilterData = {
+export type GenreFilterData = {
   genre: Genre | null;
 }
 
-const MovieFilter = () => {
+type Props = {
+  onSubmitFilter : (data: GenreFilterData) => void;
+}
+
+const MovieFilter = ({ onSubmitFilter }: Props ) => {
   const [selectGenres, setSelectGenres] = useState<Genre[]>();
 
   const {
@@ -22,7 +26,8 @@ const MovieFilter = () => {
   } = useForm<GenreFilterData>();
 
   const onSubmit = (formData: GenreFilterData) => {
-    console.log("ENVIOU", formData);
+    onSubmitFilter(formData);
+    // console.log("ENVIOU", formData);
   };
 
   const handleChangeGenre = (value: Genre) => {
@@ -32,7 +37,8 @@ const MovieFilter = () => {
       genre: getValues('genre')
     };
 
-    console.log("ENVIOU", obj);
+    onSubmitFilter(obj);
+    // console.log("ENVIOU", obj);
   };
 
   useEffect(() => {

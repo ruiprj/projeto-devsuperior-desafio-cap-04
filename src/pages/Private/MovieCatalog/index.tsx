@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import MovieDetail from 'components/MovieDetail';
-import MovieFilter from 'components/MovieFilter';
+import MovieFilter, { GenreFilterData } from 'components/MovieFilter';
 import Pagination from 'components/Pagination';
 import { useCallback, useEffect, useState } from 'react';
 import { Movie } from 'types/movie';
@@ -11,6 +11,7 @@ import './styles.css';
 
 type ControlComponentsData = {
   activePage: number;
+  filterData: GenreFilterData;
 }
 
 const MovieCatalog = () => {
@@ -18,12 +19,17 @@ const MovieCatalog = () => {
 
   const [controlComponentsData, setControlComponentsData] = useState<ControlComponentsData>(
     {
-      activePage: 0
+      activePage: 0,
+      filterData: {genre: null}
     }
   );
 
   const handlePageChange = (pageNumber: number) => {
-    setControlComponentsData({ activePage: pageNumber });
+    setControlComponentsData({ activePage: pageNumber, filterData: controlComponentsData.filterData });
+  };
+
+  const handleSubmitFilter = (data: GenreFilterData) => {
+    setControlComponentsData({ activePage: 0, filterData: data });
   };
 
   const getMovies = useCallback(() => {
@@ -31,10 +37,10 @@ const MovieCatalog = () => {
       method: 'GET',
       url: '/movies',
       params: {
-        genreId: 0,
+        genreId: controlComponentsData.filterData.genre?.id,
         page: controlComponentsData.activePage,
         size: 4,
-        sort: 'title',
+        sort: 'title'
       },
       withCredentials: true
     };
@@ -52,7 +58,7 @@ const MovieCatalog = () => {
   return (
     <div className="base-private-container  catalog-container">
       <div className="container">
-        <MovieFilter />
+        <MovieFilter onSubmitFilter={handleSubmitFilter} />
 
         <div className="row">
             
@@ -65,6 +71,7 @@ const MovieCatalog = () => {
         </div>
 
         <Pagination 
+          forcePage={ page?.number }
           pageCount={ page ? page.totalPages : 0 } 
           range={ 3 }
           onChange={ handlePageChange }
