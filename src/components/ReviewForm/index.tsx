@@ -39,12 +39,12 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
 
         toast.success("Avaliação salva com sucesso!");
 
-        console.log('SUCESSO AO SALVAR', response);
+        // console.log('SUCESSO AO SALVAR', response);
       })
       .catch((errors) => {
         toast.error("Erro ao salvar avaliação");
 
-        console.log('ERRO AO SALVAR', errors);
+        // console.log('ERRO AO SALVAR', errors);
       });
     
   }
