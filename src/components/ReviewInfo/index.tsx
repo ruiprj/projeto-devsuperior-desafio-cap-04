@@ -1,8 +1,8 @@
 import { Movie } from 'types/movie';
 import { useEffect, useState } from 'react';
 import { AxiosRequestConfig } from 'axios';
-import './styles.css';
 import { requestBackend } from 'util/requests';
+import './styles.css';
 
 type Props = {
   movieId: string;
@@ -22,11 +22,6 @@ const ReviewInfo = ({ movieId }: Props) => {
       setMovie(response.data);
     });
   }, [movieId]);
-
-
-// CONTINUAR DAQUI!
-//   - deixar a imagem em auto
-//   - colocar um div pras informações do filme e sinopse, depois configurar o flex p/ alteração de layout dos 2 em 1200px pra frente
 
   return (
     <div className="base-card  review-info-detail-card">

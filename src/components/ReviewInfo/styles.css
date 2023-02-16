@@ -71,9 +71,6 @@
     margin: 0;
 }
 
-@media (min-width: 320px) {
-}
-
 @media (min-width: 768px) {
     .review-info-detail-card {
         padding: 40px;
@@ -90,7 +87,7 @@
 @media (min-width: 1200px) {
     .review-info-detail-card {
         display: flex;
-        align-items: start;
+        align-items: flex-start;
     }
 
     .review-info-image-container img {
@@ -99,9 +96,4 @@
         margin-right: 40px;
     }
 }
-
-@media (min-width: 1400px) {
-}
-
-
 

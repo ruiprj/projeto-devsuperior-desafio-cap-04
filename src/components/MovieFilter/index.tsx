@@ -18,7 +18,7 @@ const MovieFilter = ({ onSubmitFilter }: Props ) => {
   const [selectGenres, setSelectGenres] = useState<Genre[]>();
 
   const {
-    register,
+    // register,
     handleSubmit,
     setValue,
     getValues,
