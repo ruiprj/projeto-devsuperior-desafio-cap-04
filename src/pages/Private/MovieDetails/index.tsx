@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import ReviewForm from 'components/ReviewForm';
+import ReviewInfo from 'components/ReviewInfo';
 import ReviewList from 'components/ReviewList';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -22,11 +23,7 @@ const MovieDetails = () => {
     const params: AxiosRequestConfig = {
       url: `/movies/${movieId}/reviews`,
       method: 'GET',
-      withCredentials: true,
-      // params: {
-      //   page: 0,
-      //   size: 10
-      // }
+      withCredentials: true
     };
 
     requestBackend(params).then((response) => {
@@ -47,7 +44,7 @@ const MovieDetails = () => {
   return (
     <div className="container">
       <div className="base-private-container  movie-details-container">
-        <h2>Tela detalhes do filme id: { movieId }</h2>
+        <ReviewInfo movieId={ movieId } />
 
         {hasAnyRoles(['ROLE_MEMBER']) && (
           <ReviewForm movieId={ movieId } onInsertReview={ handleInsertReview } />

@@ -10,21 +10,11 @@
     margin-bottom: 20px;
 }
 
-@media (min-width: 576px) {
-    .movie-review-card {
-        padding: 25px 20px;
-    }
-}
-
 @media (min-width: 1200px) {
     .movie-details-container h2 {
         font-size: 48px;
         line-height: 65px;
 
-        margin-bottom: 30px;
-    }
-
-    .movie-review-card {
         margin-bottom: 30px;
     }
 }

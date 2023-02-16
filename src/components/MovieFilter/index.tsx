@@ -64,6 +64,7 @@ const MovieFilter = ({ onSubmitFilter }: Props ) => {
                 options={ selectGenres }
                 isClearable
                 classNamePrefix="genre-filter-select"
+                placeholder="Selecione..."
 
                 onChange={ value => handleChangeGenre(value as Genre) }
 
@@ -72,10 +73,6 @@ const MovieFilter = ({ onSubmitFilter }: Props ) => {
               />
             )}
           />
-          
-          {/* <select name="" id="">
-            <option value="">Terror</option>
-          </select> */}
         </div>
       </form>
     </div>
