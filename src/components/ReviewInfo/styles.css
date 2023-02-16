@@ -90,7 +90,7 @@
 @media (min-width: 1200px) {
     .review-info-detail-card {
         display: flex;
-        align-items: center;
+        align-items: start;
     }
 
     .review-info-image-container img {
