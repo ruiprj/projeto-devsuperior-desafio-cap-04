@@ -1,8 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Review } from 'types/review';
-
+import { toast } from 'react-toastify';
 import { requestBackend } from 'util/requests';
 
 import './styles.css';
@@ -18,8 +17,6 @@ type FormData = {
 }
 
 const ReviewForm = ({ movieId, onInsertReview }: Props) => {
-  const [hasSuccess, setHasSuccess] = useState(false);
-
   const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormData>();
 
   const onSubmit = (formData: FormData) => {
@@ -40,14 +37,14 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
 
         onInsertReview(response.data);
 
+        toast.success("Avaliação salva com sucesso!");
+
         console.log('SUCESSO AO SALVAR', response);
-        
-        setHasSuccess(true);
       })
       .catch((errors) => {
-        console.log('ERRO AO SALVAR', errors);
+        toast.error("Erro ao salvar avaliação");
 
-        setHasSuccess(false);
+        console.log('ERRO AO SALVAR', errors);
       });
     
   }
